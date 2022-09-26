@@ -29,20 +29,16 @@
         <?php echo $_GET['phone']; ?>
     </p>
     
-    
-    
-
-
   </div>
 </div>
 
 <?php 
-    echo $_Get['firstname'];
-    echo $_Get['lastname'];
-    echo $_Get['dob'];
-    echo $_Get['specialty'];
-    echo $_Get['email'];
-    echo $_Get['phone'];
+    echo $_GET['firstname'];
+    echo $_GET['lastname'];
+    echo $_GET['dob'];
+    echo $_GET['specialty'];
+    echo $_GET['email'];
+    echo $_GET['phone'];
 
 ?>
 
