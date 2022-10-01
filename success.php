@@ -4,8 +4,9 @@
 ?>
 
 
+<!-- Printed out get action -->
 
- <h1 class="text-center text-success">You Have Been Registered!<h1/>
+ <!-- <h1 class="text-center text-success">You Have Been Registered!<h1/>
 
  <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -14,25 +15,25 @@
     </h5>
 
     <h6 class="card-subtitle mb-2 text-muted">
-         <?php echo $_GET['specialty']; ?>
+         <?php echo  $_GET['specialty']; ?>
     </h6>
     
     <p class="card-text">
-        <?php echo $_GET['dob']; ?>
+        <?php echo "Date of Birth: " . $_GET['dob']; ?>
     </p>
 
     <p class="card-text">
-        <?php echo $_GET['email']; ?>
+        <?php echo "Email Address: " . $_GET['email']; ?>
     </p>
 
     <p class="card-text">
-        <?php echo $_GET['phone']; ?>
+        <?php echo "Contact Number: " . $_GET['phone']; ?>
     </p>
     
   </div>
-</div>
+</div> -->
 
-<?php 
+  <!-- <?php  
     echo $_GET['firstname'];
     echo $_GET['lastname'];
     echo $_GET['dob'];
@@ -40,9 +41,34 @@
     echo $_GET['email'];
     echo $_GET['phone'];
 
-?>
+?>  -->
 
-  
+<h1 class="text-center text-success">You Have Been Registered!<h1/>
+
+<div class="card" style="width: 18rem;">
+ <div class="card-body">
+   <h5 class="card-title"> 
+       <?php echo $_POST['firstname'] .' ' . $_POST['lastname']; ?>
+   </h5>
+
+   <h6 class="card-subtitle mb-2 text-muted">
+        <?php echo  $_POST['specialty']; ?>
+   </h6>
+   
+   <p class="card-text">
+        Date of Birth: <?php echo $_POST['dob']; ?>
+   </p>
+
+   <p class="card-text">
+        Email Address: <?php echo $_POST['email']; ?>
+   </p>
+
+   <p class="card-text">
+        Contact Number: <?php echo $_POST['phone']; ?>
+   </p>
+   
+ </div>
+</div>
 
 
 
