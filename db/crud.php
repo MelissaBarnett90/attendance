@@ -73,6 +73,18 @@
             return $result;
         }
 
+        public function deleteAttendee($id){
+            try{
+                $sql = "delete from attendee where attendee_id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id', $id);
+                $stmt->execute();
+            }catch (PDOException $e) { 
+                echo $e->getMessage;
+                return false;
+            }
+       }
+
 
         public function  getSpecialties(){
             $sql = "SELECT * FROM `specialties`";
