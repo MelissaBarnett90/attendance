@@ -5,12 +5,12 @@
 
 
     //Get attendee by id
-    if(isset($_GET['id'])){
+    if(!isset($_GET['id'])){
+        echo "<h1 class='text-danger'>Kindly Check Details And Try Again</h1>";
+    }else{
         $id = $_GET['id'];
         $result = $crud->getAttendeeDetails($id);
-    }else{
-        echo "<h1 class='text-danger'>Kindly Check Details And Try Again</h1>";
-    }
+    
 
  
 ?>
@@ -40,7 +40,7 @@
  </div>
 </div>
 
-
+<?php } ?> 
 
 
 
