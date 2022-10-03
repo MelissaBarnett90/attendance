@@ -9,7 +9,9 @@
 
     if(!isset($_GET['id'])) 
     {
-        echo 'Error';
+        //echo 'Error';
+        include 'includes/errormessage.php';
+        header("Location: viewrecords.php");
     } 
     else
     {
@@ -67,10 +69,11 @@
       <small id="phoneHelp" class="form-text text-muted">We'll never
         share your  phone number with anyone else.</small>
     </div>
-
-
-  <button type="submit"  name="submit" class="btn btn-success btn-block">Save Changes</button>
-  </form>
+    <br/>
+    
+      <button type="submit"  name="submit" class="btn btn-success btn-block">Save Changes</button>
+      <a href="viewrecords.php" class="btn btn-info">Back to list</a>
+    </form>
 
   <?php } ?>
 

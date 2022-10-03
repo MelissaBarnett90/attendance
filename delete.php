@@ -1,7 +1,14 @@
 <?php 
     require_once 'db/conn.php';
+
+
+ 
+
+
     if(!$_GET['id']){
-        echo 'error';
+        //echo 'error';
+        include 'includes/errormessage.php';
+        header("Location: viewrecords.php");
     }
     else
     {
@@ -18,7 +25,8 @@
     }
     else
     {
-        echo 'error';
+       // echo '';
+       header("Location: viewrecords.php");
     }
   }
 

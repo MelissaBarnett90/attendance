@@ -25,12 +25,14 @@
         }
         else
         {
-            echo 'error';
+            //echo 'error';
+            include 'includes/errormessage.php';
         }
       }
     else
     {
-        echo 'error';
+        //echo 'error';
+        include 'includes/errormessage.php';
     }
 ?>
 
