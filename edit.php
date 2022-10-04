@@ -71,8 +71,9 @@
     </div>
     <br/>
     
-      <button type="submit"  name="submit" class="btn btn-success btn-block">Save Changes</button>
+      
       <a href="viewrecords.php" class="btn btn-info">Back to list</a>
+      <button type="submit"  name="submit" class="btn btn-success btn-block">Save Changes</button>
     </form>
 
   <?php } ?>
