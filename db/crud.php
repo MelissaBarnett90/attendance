@@ -28,7 +28,7 @@
                 return true;
             
             } catch (PDOException $e) { 
-                 echo $e->getMessage;
+                 echo $e->getMessage();
                  return false;
             } 
         }
@@ -52,7 +52,7 @@
             $stmt->execute();
             return true;
            }catch (PDOException $e) { 
-            echo $e->getMessage;
+            echo $e->getMessage();
             return false;
            }
         }   
@@ -63,7 +63,7 @@
             $result = $this->db->query($sql);
             return $result;
         }catch (PDOException $e) { 
-            echo $e->getMessage;
+            echo $e->getMessage();
             return false;
            }
         }
@@ -78,7 +78,7 @@
             $result = $stmt->fetch();
             return $result;
         }catch (PDOException $e) { 
-            echo $e->getMessage;
+            echo $e->getMessage();
             return false;
            }
         }
@@ -90,7 +90,7 @@
                 $stmt->bindparam(':id', $id);
                 $stmt->execute();
             }catch (PDOException $e) { 
-                echo $e->getMessage;
+                echo $e->getMessage();
                 return false;
             }
        }
@@ -102,7 +102,7 @@
             $result = $this->db->query($sql);
             return $result;
         }catch (PDOException $e) { 
-            echo $e->getMessage;
+            echo $e->getMessage();
             return false;
            }
         }

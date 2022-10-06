@@ -22,7 +22,7 @@
         $pdo = new PDO($dsn, $user, $pass);
         $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ERRMODE_EXCEPTION);
 
-        echo 'Hello Database';
+       // echo 'Hello Database';
     } catch(PDOException $e){
         // echo "<h1 class='text-danger'>No Database Found</h1>";
         throw new PDOException($e->getMessage());
@@ -34,6 +34,6 @@
     $crud = new crud($pdo);
     $user = new user($pdo);
 
-    $user->insertUser("admin","password");
+   $user->insertUser("admin","password");
 
     ?>

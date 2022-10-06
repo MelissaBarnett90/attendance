@@ -1,3 +1,8 @@
+<?php
+   include_once 'includes/session.php'
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,25 +23,44 @@
 </head>
   <body>
   <div class="container">
-  <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-primary" >
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">IT Conference</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav  mr-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="viewrecords.php">View Attendees</a>
         </li>
+
+        <form class="form-inline my-2 my-lg-0">
+
+      <div class="collapse navbar-collapse .navbar-right" id="navbarSupportedContent">
+     <?php
+      if(!isset($_SESSION['userid'])){
+     ?>
+
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="login.php">Log in</a>
+            </li>
+
+        <?php } else{ ?>
+          <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only"></span></a>
+          <a class="nav-link active" aria-current="page" href="logout.php">Log out</a>
+
+          <?php  } ?>
        
-      <form class="d-flex" role="search">
+        </form>
+      <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>

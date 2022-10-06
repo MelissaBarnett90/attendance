@@ -1,15 +1,15 @@
 <?php 
 
-    class user{
+    class user {
         //private database object
             private $db;
     
             //constructor to initialize private variable to the database connection
-            function __construct($conn){
-                $this->db =$conn;
+            function __construct($conn) {
+                $this->db = $conn;
             }
             
-        public function insertUser($username,$password){
+        public function insertUser($username,$password) {
             try {
                 $result = $this->getUserbyUsername($username);
                 if($result['num'] > 0){
@@ -18,7 +18,7 @@
                 else{
                     $new_password = md5($password.$username);
                 //define sql statement to be executed
-                $sql = "INSERT INTO users(username.password)
+                $sql = "INSERT INTO users(username,password)
                 VALUES (:username,:password)";
                //prepare the sql statement for execution
                $stmt = $this->db->prepare($sql);
@@ -33,7 +33,7 @@
                 }
               
             } catch (PDOException $e) { 
-                 echo $e->getMessage;
+                 echo $e->getMessage();
                  return false;
             } 
 
@@ -41,7 +41,7 @@
 
         public function getUser($username,$password){
             try{
-                $sql = "Select * from users where username = :username AND password = :password ";
+                $sql = "SELECT * FROM users WHERE username = :username AND password = :password ";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':username', $username);
                 $stmt->bindparam(':password', $password);
@@ -49,7 +49,7 @@
                 $result = $stmt->fetch();
                 return $result;
             }catch (PDOException $e) { 
-                echo $e->getMessage;
+                echo $e->getMessage();
                 return false;
                }
 
@@ -58,18 +58,20 @@
 
         public function getUserbyUsername($username){
             try{
-                $sql = "Select count(*) as num from users where username = :username";
+                $sql = "SELECT COUNT(*) AS num FROM users WHERE username = :username";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':username', $username);
+               
                 $stmt->execute();
                 $result = $stmt->fetch();
                 return $result;
             }catch (PDOException $e) { 
-                echo $e->getMessage;
+                echo $e->getMessage();
                 return false;
                }
 
         }
 
         }
-?>
+        
+        ?>
