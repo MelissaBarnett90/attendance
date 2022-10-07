@@ -3,18 +3,18 @@
   
   
   //In development connection below
-  $host = '127.0.0.1';
-  $db = 'attendance_db';
-  $user = 'root';
-  $pass = '';
-  $charset = 'ut8mb4';
+//    $host = '127.0.0.1';
+//    $db = 'attendance_db';
+//    $user = 'root';
+//    $pass = '';
+//    $charset = 'ut8mb4';
 
    //remote database connection
-//    $host = 'sql5.freemysqlhosting.net';
-//    $db = 'sql5523795';
-//    $user = 'sql5523795';
-//    $pass = 'FmwSKn68GV';
-//    $charset = 'ut8mb4';
+   $host = 'sql5.freemysqlhosting.net';
+   $db = 'sql5523795';
+    $user = 'sql5523795';
+    $pass = 'FmwSKn68GV';
+    $charset = 'ut8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;$charset";
 
