@@ -7,12 +7,12 @@ class SendEmail{
             $key = '';
 
             $email = new \SendGrid\Mail\Mail();
-            $$email->setFrom("melissabarnett90@yahoo.com", "Melissa Barnett");
+            $email->setFrom("melissabarnett90@yahoo.com", "Melissa Barnett");
             $email->setSubject($subject);
             $email->addTo($to);
-            $email->addContent("text/plain");
+            $email->addContent("text/plain", $content);
 
-            $sendgrid = new\SendGrid($key);
+            $sendgrid = new \SendGrid($key);
 
             try{
                 $response = $sendgrid->send($email);

@@ -5,15 +5,24 @@
     require_once 'sendemail.php'; 
 
     if(isset($_POST['submit'])){
+      //extract values from $_POST array
       $fname = $_POST['firstname'];
       $lname = $_POST['lastname'];
       $dob = $_POST['dob'];
       $email = $_POST['email'];
       $contact = $_POST['phone'];
       $specialty = $_POST['specialty'];
+      
+      //uploads
+      $orig_file = $_FILES["avatar"]["tmp_name"];
+      $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+      $target_dir = 'uploads/*';
+      $destination = "$target_dir$contact.$ext";
+      move_uploaded_file($orig_file,$destination);
+
+          
       //call function to insert and track if successful or not
-     
-      $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
+      $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty, $destination);
       $specialtyName = $crud->getSpecialtyById($specialty);
 
 
@@ -72,6 +81,7 @@
 <h1 class="text-center text-success">You Have Been Registered!<h1/>
 <br/>
 
+<img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 20%; height: 20%" />
 <div class="card" style="width: 18rem;">
  <div class="card-body">
    <h5 class="card-title"> 
