@@ -11,9 +11,9 @@
 
    //remote database connection
     $host = 'sql5.freemysqlhosting.net';
-    $db = 'sql5523795';
-    $user = 'sql5523795';
-    $pass = 'FmwSKn68GV';
+    $db = 'sql5529256';
+    $user = 'sql5529256';
+    $pass = 'tQmYqYpycV';
     $charset = 'ut8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;$charset";
