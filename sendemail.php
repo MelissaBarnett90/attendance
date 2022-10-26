@@ -4,10 +4,10 @@ require 'vendor/autoload.php';
 class SendEmail{
      
     public static function SendMail($to,$subject,$content){
-            $key = '';
+            $key = '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';
 
             $email = new \SendGrid\Mail\Mail();
-            $email->setFrom("melissabarnett90@yahoo.com", "Melissa Barnett");
+            $email->setFrom("karenhogg778@gmail.com", "Melissa Barnett");
             $email->setSubject($subject);
             $email->addTo($to);
             $email->addContent("text/plain", $content);
